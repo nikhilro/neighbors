@@ -10,7 +10,7 @@ Given the coordinates for a place, find other places from a list within X km dis
 
 `python3 -m neighbors -i customer.txt -c 37.788802 -122.4025067` # example
 
-`python3 -m unittest discover -v` # run tests
+`python3 -m unittest discover -bv` # run tests
 
 ## Thoughts as I was coding
 
