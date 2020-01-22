@@ -4,10 +4,13 @@ Given the coordinates for a place, find other places from a list within X km dis
 # Run
 
 **Please use python3 to run the program.** 
+**Run all commands at the top level directory.**
 
 `python3 -m neighbors --help` # to get different options for running
 
 `python3 -m neighbors -i customer.txt -c 37.788802 -122.4025067` # example
+
+`python3 -m unittest discover -v` # run tests
 
 ## Thoughts as I was coding
 
@@ -21,4 +24,6 @@ Given the coordinates for a place, find other places from a list within X km dis
 
 * Easy to add more customizability by specifying additional option in CLI that override constants etc.
 
-* Formatter/Transformer could be another step. 
+* Formatter/Transformer could be another step. Right now, JSONWriter just takes "keys" that we want to dump
+
+* Testing rig is set up but not much testing :( ...

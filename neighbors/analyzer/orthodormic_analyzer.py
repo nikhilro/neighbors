@@ -1,4 +1,6 @@
-import math 
+import math
+
+from neighbors.constant import NEIGHBOR_DELTA, EARTH_RADIUS
 
 class OrthodermicAnalyzer:
     def __init__(self, items, reference_location):
@@ -17,8 +19,8 @@ class OrthodermicAnalyzer:
                 math.sin(x) * math.sin(xx) + 
                 math.cos(x) * math.cos(xx) * math.cos(abs(y - yy))
             ) 
-            arc_length = 6378.1370 * central_angle # km
-            if arc_length < 100: # km
+            arc_length = EARTH_RADIUS * central_angle
+            if arc_length < NEIGHBOR_DELTA: 
                 admissible_items.append(item)
         self._admissible_items = admissible_items
 
