@@ -6,13 +6,16 @@ class JSONWriter:
         self._file_path = file_path
         self._items = items
 
-    def write_items(self, keys=None):
+    def write_items(self, keys=None, sort=None):
         file_path= self._file_path
         formatted_items = []
 
         for item in self._items:
             formatted_items.append({k: item[k] for k in (keys or item.keys())})
 
+        if sort:
+            formatted_items = sorted(formatted_items, key=sort)
+        
         if os.path.isfile(file_path) and os.stat(file_path).st_size != 0:
             print(f'Output file: {file_path} is non-empty. Appending.')
         with open(file_path, mode='a') as f:

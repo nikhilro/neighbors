@@ -1,8 +1,4 @@
-import sys
-import os
-from pprint import pprint
-import yaml
-import math
+from operator import itemgetter
 
 from neighbors.cli.generator import CLIGenerator
 from neighbors.reader.yaml_reader import YAMLReader
@@ -23,6 +19,6 @@ if __name__ == "__main__":
     neighboring_customers = analyzer.admissible_items
 
     writer = JSONWriter(user_input.output_file_path, neighboring_customers)
-    writer.write_items(keys=('user_id', 'name'))
+    writer.write_items(keys=('user_id', 'name'), sort=itemgetter('user_id'))
 
     
